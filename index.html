@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mateo Orellana — Gameplay Programmer</title>
+<meta name="description" content="Portfolio de Mateo Orellana, Gameplay Programmer y Game Designer. Sistemas de IA, networking multijugador y gameplay en Unreal Engine, Godot y Roblox."/>
+<meta property="og:title" content="Mateo Orellana — Gameplay Programmer" />
+<meta property="og:description" content="Gameplay Programmer & Game Designer. IA, networking y sistemas de juego en Unreal, Godot y Roblox." />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="cosmos"></div>
+<canvas id="stars"></canvas>
+
+<!-- ======= NAV ======= -->
+<nav class="nav" id="nav">
+  <div class="inner">
+    <a href="#top" class="brand">Mateo Orellana</a>
+    <ul class="links">
+      <li><a href="#work" data-i18n="nav_work">Proyectos</a></li>
+      <li><a href="#tech" data-i18n="nav_tech">Tecnologías</a></li>
+      <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
+      <li><a href="#experience" data-i18n="nav_exp">Experiencia</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+      <li><a href="#" class="lang es active" data-lang="es">ES</a></li>
+      <li><a href="#" class="lang en" data-lang="en">EN</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ======= HERO ======= -->
+<header class="hero container">
+  <div class="context reveal" data-i18n="hero_context">Santiago, Chile — Buscando prácticas / junior roles en programación de gameplay</div>
+  <h1 class="reveal" data-i18n="hero_name">Mateo<br/><span class="thin">Orellana</span></h1>
+  <div class="role reveal" data-i18n="hero_role">Gameplay Programmer <span class="sep">/</span> Game Designer <span class="sep">/</span> Director de Estudio</div>
+  <p class="tagline reveal" data-i18n="hero_tag">Desarrollo sistemas de gameplay, IA y networking multijugador. También dirijo NOVALINK Studio, un estudio indie que entrena y conecta talento emergente.</p>
+  <div class="tech-strip reveal">
+    <span>C++</span><span>C#</span><span>GDScript</span><span>Luau</span>
+    <span>Unreal Engine</span><span>Godot</span><span>Roblox Studio</span>
+    <span>WebSockets</span><span>Git / GitHub</span><span>Trello</span>
+  </div>
+  <div class="cta-row reveal">
+    <a class="btn btn-primary" href="#work" data-i18n="cta_work">Ver proyectos</a>
+    <a class="btn" href="#contact" data-i18n="cta_contact">Contacto</a>
+    <a class="btn" href="assets/Mateo_Orellana_CV.pdf" data-i18n="cta_resume">Descargar CV (PDF)</a>
+  </div>
+  <div class="hero-scroll reveal"><span data-i18n="scroll">Scroll</span><div class="line"></div></div>
+</header>
+
+<!-- ======= SHOWREEL ======= -->
+<section class="block" id="showreel">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">///</span><span class="label" data-i18n="reel_label">Showreel 2026</span></div>
+    <div class="reel-wrap reveal">
+      <div class="reel-frame">
+        <video muted playsinline controls preload="metadata" poster="assets/screenshots/showreel-poster.jpg">
+          <source src="assets/videos/showreel.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="reel-timeline">
+        <span class="seg"><span class="t">0:00 – 0:26</span><span class="d">El Show Olvidado · Unreal C++</span></span>
+        <span class="seg"><span class="t">0:26 – 0:33</span><span class="d">Roblox Obby · Luau</span></span>
+        <span class="seg"><span class="t">0:33 – 0:53</span><span class="d">Dead Genre · Godot · Souls-like</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= WORK / PROJECTS ======= -->
+<section class="block" id="work">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">01</span><span class="label" data-i18n="work_label">Proyectos seleccionados</span></div>
+    <div class="projects">
+
+      <!-- ============ PROYECTO 01 — EL SHOW OLVIDADO ============ -->
+      <article class="project reveal" id="synco">
+        <div class="thumb">
+          <img src="assets/screenshots/show-olvidado.jpg" alt="El Show Olvidado — gameplay" loading="lazy" />
+        </div>
+        <div class="body">
+          <div class="head"><h3 data-i18n="synco_name">El Show Olvidado</h3><span class="num">01</span></div>
+          <div class="role-line" data-i18n="synco_role">Unreal Engine 5.6 · C++ · Gameplay Ability System</div>
+          <div class="meta">
+            <span>Unreal Engine 5.6</span><span>C++</span><span>GAS</span><span>Enhanced Input</span><span>UMG</span><span>GameplayStateTree</span>
+          </div>
+          <p class="desc" data-i18n="synco_desc">Juego de terror en primera persona con animatrónicos. Construí el core de gameplay en C++ usando el Gameplay Ability System (GAS) de Unreal: un pawn datadriven que mapea abilities a Enhanced Input actions, con lifecycle de bindings encapsulado en la ability y limpieza automática al terminar. Incluyo cámara cinemática, interacción por line-trace y pickups con UMG.</p>
+          <div class="challenge">
+            <div class="q" data-i18n="challenge_q">Desafío técnico</div>
+            <p data-i18n="synco_challenge">Encapsular el input de cada habilidad dentro de la ability misma (no en el pawn), de modo que las acciones viajen con el DataAsset y se desvinculen automáticamente al terminar — evitando leaks de bindings en el input component.</p>
+          </div>
+          <code class="block"><span class="cmt">// GA_BaseTriggeredInputAction.cpp — ActivateAbility()</span>
+<span class="cmt">// Lookup which UInputAction THIS ability class is mapped to,</span>
+<span class="cmt">// then bind it live within the ability lifecycle.</span>
+<span class="kw">if</span> (It.IsValid() && It.GameplayAbilityClass == GetClass())
+{
+    <span class="kw">const</span> FEnhancedInputActionEventBinding& Triggered =
+        EnhancedInputComponent->BindAction(
+            It.InputAction, ETriggerEvent::Triggered,
+            <span class="kw">this</span>, &UGA_BaseTriggeredInputAction::OnTriggeredInputAction);
+    TriggeredHandles.AddUnique(Triggered.GetHandle());
+
+    <span class="kw">const</span> FEnhancedInputActionEventBinding& Released =
+        EnhancedInputComponent->BindAction(
+            It.InputAction, ETriggerEvent::Completed,
+            <span class="kw">this</span>, &UGA_BaseTriggeredInputAction::OnReleasedInputAction);
+    ReleasedHandles.AddUnique(Released.getHandle());
+}
+<span class="cmt">// On EndAbility: every tracked handle is removed — input scoped to ability lifecycle</span></code>
+          <div class="links">
+            <a href="#">Video gameplay</a>
+            <a href="#">GitHub</a>
+            <a href="#">Technical breakdown</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ PROYECTO 02 — GALACTUM ============ -->
+      <article class="project reveal" id="galactum">
+        <div class="thumb">
+          <img src="assets/screenshots/galactum.png" alt="Galactum — mundo espacial" loading="lazy" />
+        </div>
+        <div class="body">
+          <div class="head"><h3 data-i18n="galactum_name">Galactum — Equipo 3: Mundo y Combate</h3><span class="num">02</span></div>
+          <div class="role-line" data-i18n="galactum_role">Godot 4.6 · GDScript · Networking · Client–Server · Android</div>
+          <div class="meta">
+            <span>Godot 4.6</span><span>GDScript tipado</span><span>WebSockets</span><span>Snapshots + Delta</span><span>AOI / Spatial Hash</span><span>Android</span>
+          </div>
+          <p class="desc" data-i18n="galactum_desc">Juego espacial multijugador con arquitectura cliente-servidor autoritativa. Diseñé el protocolo contract-first sobre WebSockets, un servidor headless Godot con loop por ticks, réplica snapshot+delta (added/updated/removed con merge parcial) y un área de interés (AOI) con Spatial Hashing para culling de red. El módulo Equipo 3 fue desacoplado de los demás equipos usando providers intercambiables (mocks).</p>
+          <div class="challenge">
+            <div class="q" data-i18n="challenge_q">Desafío técnico</div>
+            <p data-i18n="galactum_challenge">Mantener un mundo compartido consistente entre cliente y servidor, resolviendo las 4 transiciones outside→inside/inside→outside, mientras el módulo se desarrollaba de forma independiente a los otros 4 equipos (con mocks como dependencias).</p>
+          </div>
+          <code class="block"><span class="cmt"># sss_connection.gd — detect desync via monotonic seq continuity</span>
+<span class="kw">func</span> _validate_sequence(message: Dictionary) -> bool:
+    <span class="kw">var</span> incoming_seq := int(message.get(<span class="str">"seq"</span>, -1))
+    <span class="kw">if</span> incoming_seq < 1:
+        <span class="kw">return</span> false
+    <span class="kw">if</span> _next_expected_seq == -1:
+        _next_expected_seq = incoming_seq + 1  <span class="cmt"># first message: seed the base</span>
+        <span class="kw">return</span> true
+    <span class="kw">if</span> incoming_seq != _next_expected_seq:
+        <span class="kw">return</span> false  <span class="cmt"># gap real → desync_detected.emit() → request_full_snapshot()</span>
+    _next_expected_seq = incoming_seq + 1
+    <span class="kw">return</span> true</code>
+          <div class="links">
+            <a href="#">Video gameplay</a>
+            <a href="#">GitHub</a>
+            <a href="#">Diagrama de arquitectura</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ PROYECTO 03 — ROBLOX OBBY ============ -->
+      <article class="project reveal" id="roblox">
+        <div class="thumb">
+          <img src="assets/screenshots/roblox.png" alt="Roblox Obby Show Olvidado — gameplay" loading="lazy" />
+        </div>
+        <div class="body">
+          <div class="head"><h3 data-i18n="roblox_name">Roblox Obby — "Show Olvidado"</h3><span class="num">03</span></div>
+          <div class="role-line" data-i18n="roblox_role">Roblox Studio · Luau · Gameplay / Multiplayer</div>
+          <div class="meta">
+            <span>Luau</span><span>AI de enemigos</span><span>DataStores</span><span>Economía</span><span>Client–Server</span><span>20+ niveles</span>
+          </div>
+          <p class="desc" data-i18n="roblox_desc">Obby persistente con más de 20 niveles, escrito casi completamente por mí. Programé sobre servidor autoritativo: checkpoints con progresión en DataStore, XP con curva exponencial y buffs de movilidad, economía completa (tienda, cajas con loot tables ponderadas, logros), habilidades (push con ApplyImpulse, freeze con network ownership transfer, doble salto), y IA de enemigos con patrulla por waypoints, persecución acelerada y control territorial.</p>
+          <div class="challenge">
+            <div class="q" data-i18n="challenge_q">Desafío técnico</div>
+            <p data-i18n="roblox_challenge">Que la progresión y la economía sobrevivan servidores y reinicios, validando cada transacción del lado del servidor y evitando exploits del cliente (XP spoofing, duplicates, etc.).</p>
+          </div>
+          <code class="block"><span class="cmt">-- Ability: Push con física realista</span>
+<span class="kw">local</span> mass = otherRoot.AssemblyMass <span class="kw">or</span> otherRoot:GetMass()
+<span class="kw">local</span> impulse = dir * mass * strength
+otherRoot:ApplyImpulse(impulse)
+
+<span class="cmt">-- XP: curva exponencial para nivel</span>
+<span class="kw">local function</span> GetRequiredXP(level)
+    <span class="kw">if</span> level &lt;= 1 <span class="kw">then return</span> 0 <span class="kw">end</span>
+    <span class="kw">return</span> 4 * (math.pow(2, level - 1))
+<span class="kw">end</span>
+
+<span class="cmt">-- Tienda: validación servidor</span>
+<span class="kw">if</span> level &lt; item.RequiredLevel <span class="kw">then return</span> <span class="kw">end</span>
+<span class="kw">if</span> inv.OwnedItems[itemId] <span class="kw">then return</span> <span class="kw">end</span>
+<span class="kw">local</span> effectivePrice = ShopItemsModule.GetEffectivePrice(item, level)
+<span class="kw">if</span> inv.Coins &lt; effectivePrice <span class="kw">then return</span> <span class="kw">end</span>
+inv.Coins -= effectivePrice
+inv.OwnedItems[itemId] = <span class="kw">true</span></code>
+          <div class="links">
+            <a href="#">Jugar en Roblox</a>
+            <a href="#">Video gameplay</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ PROYECTO 04 — DEAD GENRE ============ -->
+      <article class="project reveal" id="dead-genre">
+        <div class="thumb">
+          <img src="assets/screenshots/dead-genre.jpg" alt="Dead Genre — Pandora's Tower" loading="lazy" />
+        </div>
+        <div class="body">
+          <div class="head"><h3 data-i18n="deadgenre_name">Dead Genre</h3><span class="num">04</span></div>
+          <div class="role-line" data-i18n="deadgenre_role">Godot 4.6 · GDScript · Souls-like · Combate melee</div>
+          <div class="meta">
+            <span>Godot 4.6</span><span>GDScript tipado</span><span>CharacterBody3D</span><span>Area3D</span><span>FSM</span><span>Spawner</span>
+          </div>
+          <p class="desc" data-i18n="deadgenre_desc">Prototipo souls-like en 3D con combate cuerpo a cuerpo, sistema de parry con knockback escalado, lock-on por frustum, enemigos con FSM (chase → orbit → attack → special), áreas de ataque marcadas instanciadas como Area3D con raycast al suelo para garantizar posicionamiento legible.</p>
+          <div class="challenge">
+            <div class="q" data-i18n="challenge_q">Desafío técnico</div>
+            <p data-i18n="deadgenre_challenge">Construir un ciclo de combate legible: el jugador debe leer el ataque enemigo antes de que conecte, usando telegraph visual y separación temporal entre warning y detonación del área marcada.</p>
+          </div>
+          <code class="block"><span class="cmt"># Enemy.gd — coordinación descentralizada del grupo</span>
+<span class="cmt"># Rotación determinista "only one attacker" por time-slot.</span>
+<span class="cmt"># Sin manager node — el atacante rota entre combatientes</span>
+<span class="cmt"># usando un slot de tiempo derivado del reloj del engine.</span>
+<span class="kw">func</span> is_active_attacker() -> bool:
+    <span class="kw">if</span> player == null:
+        <span class="kw">return</span> true
+    <span class="kw">var</span> combat_enemies := get_combat_enemies()
+    <span class="kw">if</span> combat_enemies.size() &lt;= 1:
+        <span class="kw">return</span> true
+    <span class="kw">var</span> switch_ms: int = max(1, int(attacker_switch_time * 1000.0))
+    <span class="kw">var</span> time_slot: int = int(Time.get_ticks_msec() / switch_ms)
+    <span class="kw">var</span> attacker_index: int = time_slot % combat_enemies.size()
+    <span class="kw">return</span> combat_enemies[attacker_index] == self</code>
+          <div class="links">
+            <a href="#">Video gameplay</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ PROYECTO 05 — INTERDEMO GAME JAM ============ -->
+      <article class="project reveal" id="gamejam">
+        <div class="thumb">
+          <video muted playsinline controls preload="metadata" class="thumb-video" poster="assets/screenshots/gamejam.jpg">
+            <source src="assets/videos/interdemo-trailer.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="body">
+          <div class="head"><h3 data-i18n="gamejam_name">InterDemo — Game Jam</h3><span class="num">05</span></div>
+          <div class="role-line" data-i18n="gamejam_role">Godot · GDScript · Narrative / Horror · Shader</div>
+          <div class="meta">
+            <span>Godot</span><span>GDScript</span><span>Shader GLSL</span><span>Narrativa</span><span>Jam 48h</span>
+          </div>
+          <p class="desc" data-i18n="gamejam_desc">Juego hecho en 48 horas: loop de interrogatorio narrativo, sistema de vidas, monitor de pulso (heartbeat) con shader personalizado y escenas de transición por correo electrónico. Demostración de que puedo entregar una experiencia completa y coherente bajo presión de tiempo.</p>
+          <div class="challenge">
+            <div class="q" data-i18n="challenge_q">Desafío técnico</div>
+            <p data-i18n="gamejam_challenge">Entregar una experiencia completa y jugable en 48 horas, priorizando el core loop (interrogatorio → heartbeat → resultado) y complementando con shader atmosférico.</p>
+          </div>
+          <code class="block"><span class="cmt">// interrogatorio.gdshader — distorsión atmosférica</span>
+shader_type spatial;
+uniform float intensity : hint_range(0.0, 1.0) = 0.0;
+uniform sampler2D screen_texture : hint_screen_texture;
+
+void fragment() {
+    vec2 uv = SCREEN_UV;
+    <span class="cmt">// Distorsión radial proporcional a la intensidad</span>
+    float dist = distance(uv, vec2(0.5));
+    uv += (uv - vec2(0.5)) * dist * intensity * 0.15;
+    ALBEDO = texture(screen_texture, uv).rgb;
+}</code>
+          <div class="links">
+            <a href="#">Jugar (itch.io)</a>
+            <a href="#">Video trailer</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= TECH ======= -->
+<section class="block" id="tech">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">02</span><span class="label" data-i18n="tech_label">Tecnologías y habilidades</span></div>
+    <div class="tech-grid">
+      <div class="tech-col reveal">
+        <h4 data-i18n="tech_lang">Lenguajes</h4>
+        <ul><li>C++ (Unreal Engine)</li><li>C#</li><li>GDScript</li><li>Luau / Lua</li><li>Python</li></ul>
+      </div>
+      <div class="tech-col reveal">
+        <h4 data-i18n="tech_engines">Engines</h4>
+        <ul><li>Unreal Engine 5.6</li><li>Godot 4.6</li><li>Roblox Studio</li></ul>
+      </div>
+      <div class="tech-col reveal">
+        <h4 data-i18n="tech_systems">Sistemas</h4>
+        <ul><li>Gameplay Ability System (GAS)</li><li>Enemy AI / FSM / Behavior Trees</li><li>Networking client–server (WebSockets)</li><li>Snapshots + delta replication</li><li>AOI / Spatial Hashing</li><li>Datos persistentes (DataStores)</li><li>Economía y sistemas de progresión</li><li>Parry / combate melee</li></ul>
+      </div>
+      <div class="tech-col reveal">
+        <h4 data-i18n="tech_tools">Herramientas</h4>
+        <ul><li>Git / GitHub</li><li>Trello</li><li>Discord</li><li>Android builds</li><li>Liderazgo de equipo</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ABOUT ======= -->
+<section class="block" id="about">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">03</span><span class="label" data-i18n="about_label">Sobre mí</span></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <h3 data-i18n="about_h">Programador antes, director después.</h3>
+        <p data-i18n="about_p1">Soy <strong>programador de gameplay</strong> y <strong>game designer</strong>. Mis áreas son <strong>IA de enemigos</strong>, <strong>networking multijugador</strong> y <strong>mecánicas de juego</strong> en Unreal Engine (C++), Godot (GDScript) y Roblox Studio (Luau). Me interesan los problemas de arquitectura: por qué el código está ordenado de cierta manera, cómo se comunica cliente con servidor y cómo se siente una mecánica en la mano del jugador.</p>
+        <p data-i18n="about_p2">También soy <strong>fundador y director de NOVALINK Studio</strong>, donde coordino equipos multidisciplinarios (programación, arte, animación), planifico milestones, organizo game jams y mantengo relaciones con estudios independientes. Esa experiencia me enseñó a trabajar en equipo y a cerrar proyectos — lo que también busco en un estudio.</p>
+      </div>
+      <div class="reveal">
+        <h3 data-i18n="about_philosophy">Lo que valoro</h3>
+        <ul>
+          <li><b data-i18n="about_li1h">Entregado &gt; idea.</b> <span data-i18n="about_li1">4 proyectos terminados pesan más que 20 prototipos a medias.</span></li>
+          <li><b data-i18n="about_li2h">Honestidad técnica.</b> <span data-i18n="about_li2">Digo exactamente qué hice y qué no en cada proyecto.</span></li>
+          <li><b data-i18n="about_li3h">Game feel.</b> <span data-i18n="about_li3">Una mecánica se valida cuando se siente bien, no cuando compila.</span></li>
+          <li><b data-i18n="about_li4h">Aprender haciendo.</b> <span data-i18n="about_li4">IA, networking y economía los aprendí construyéndolos, no leyendo docs.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= EXPERIENCE ======= -->
+<section class="block" id="experience">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">04</span><span class="label" data-i18n="exp_label">Experiencia y liderazgo</span></div>
+
+    <div class="exp-item reveal" data-num="01">
+      <h3 data-i18n="exp_novalink_h">Fundador &amp; Director Creativo — NOVALINK Studio</h3>
+      <div class="where" data-i18n="exp_novalink_where">Estudio indie · Santiago, Chile · 2024 — presente</div>
+      <ul>
+        <li data-i18n="exp_novalink_l1">Dirijo un estudio indie que entrena y conecta talento emergente en desarrollo de videojuegos.</li>
+        <li data-i18n="exp_novalink_l2">Coordino programadores, artistas y animadores a través de Discord y Trello, definiendo milestones, tareas y prioridades de producción.</li>
+        <li data-i18n="exp_novalink_l3">Organizo game jams y mantengo colaboración con estudios independientes, incluidos contactos internacionales.</li>
+        <li data-i18n="exp_novalink_l4">Diseño y programo gameplay además de dirigir — trabajo codo a codo con el equipo.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item reveal" data-num="02">
+      <h3 data-i18n="exp_team_h">Team Lead — Galactum (Equipo 3: Mundo y Combate)</h3>
+      <div class="where" data-i18n="exp_team_where">Proyecto multi-equipo · Godot 4.6</div>
+      <ul>
+        <li data-i18n="exp_team_l1">Diseñé e implementé la arquitectura cliente-servidor del módulo: protocolo contract-first sobre WebSockets, servidor headless con loop por ticks, réplica snapshot+delta con merge parcial.</li>
+        <li data-i18n="exp_team_l2">Área de Interés (AOI) con Spatial Hashing para culling de red — el servidor solo envía lo que cada cliente puede ver.</li>
+        <li data-i18n="exp_team_l3">Desacoplado de los otros 4 equipos vía providers intercambiables (mocks), para desarrollo independiente sin backend.</li>
+        <li data-i18n="exp_team_l4">Target Android desde el día uno: touch, resolución, memoria, background/resume.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CONTACT ======= -->
+<section class="block" id="contact">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">05</span><span class="label" data-i18n="contact_label">Contacto</span></div>
+    <div class="contact-big reveal">
+      <a href="mailto:mate.orellana@duocuc.cl" data-i18n="contact_mail">mate.orellana@duocuc.cl</a>
+    </div>
+    <div class="contact-links reveal">
+      <a href="https://github.com/Drfiter" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/mateo-daniel-orellana-villegas-586290270/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/company/novalink-studio/" target="_blank" rel="noopener">NOVALINK Studio</a>
+      <a href="assets/Mateo_Orellana_CV.pdf" data-i18n="link_resume">CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <span>Mateo Orellana © <span id="year"></span></span>
+    <span class="mono">NOVALINK · Santiago, Chile</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
