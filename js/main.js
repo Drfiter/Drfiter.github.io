@@ -87,10 +87,40 @@
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   revealEls.forEach((el) => io.observe(el));
+  // The hero media spans several grid rows; reveal it immediately so tall
+  // desktop layouts never miss the IntersectionObserver threshold.
+  const heroFeature = document.querySelector(".hero-feature");
+  if (heroFeature) heroFeature.classList.add("visible");
 
   /* ---------- Nav scroll state ---------- */
   const nav = document.getElementById("nav");
-  window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 24));
+  const scrollProgress = document.getElementById("scroll-progress");
+  function updateScrollState() {
+    nav.classList.toggle("scrolled", window.scrollY > 24);
+    if (scrollProgress) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      scrollProgress.style.transform = `scaleX(${progress})`;
+    }
+  }
+  updateScrollState();
+  window.addEventListener("scroll", updateScrollState, { passive: true });
+
+  /* ---------- Active section in navigation ---------- */
+  const sectionLinks = [...document.querySelectorAll('.nav .links a[href^="#"]')]
+    .filter((link) => link.getAttribute("href").length > 1);
+  const trackedSections = sectionLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      sectionLinks.forEach((link) => {
+        link.classList.toggle("current", link.getAttribute("href") === `#${entry.target.id}`);
+      });
+    });
+  }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+  trackedSections.forEach((section) => sectionObserver.observe(section));
 
   /* ---------- Footer year ---------- */
   const yr = document.getElementById("year");
@@ -105,7 +135,7 @@
       hero_role: "Gameplay Programmer / Game Designer / Studio Director",
       hero_tag: "I build gameplay systems, AI and multiplayer networking. I also run NOVALINK Studio, an indie studio training and connecting emerging talent.",
       cta_work: "View work", cta_contact: "Contact", cta_resume: "Download résumé (PDF)", scroll: "Scroll",
-      reel_label: "Showreel 2026", work_label: "Selected Work",
+      reel_label: "Showreel 2026", work_label: "Selected Work", code_label: "View implementation",
       challenge_q: "Technical challenge",
 
       synco_name: "El Show Olvidado",
@@ -179,6 +209,7 @@
 
   function setLang(lang) {
     currentLang = lang;
+    document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.dataset.i18n;
       if (lang === "es") {

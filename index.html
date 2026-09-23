@@ -8,7 +8,8 @@
 <meta property="og:title" content="Mateo Orellana — Gameplay Programmer" />
 <meta property="og:description" content="Gameplay Programmer & Game Designer. IA, networking y sistemas de juego en Unreal, Godot y Roblox." />
 <meta property="og:type" content="website" />
-<link rel="stylesheet" href="css/style.css" />
+<meta name="theme-color" content="#090a0d" />
+<link rel="stylesheet" href="css/style.css?v=2" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
@@ -16,11 +17,13 @@
 
 <div class="cosmos"></div>
 <canvas id="stars"></canvas>
+<a class="skip-link" href="#work">Saltar a proyectos</a>
 
 <!-- ======= NAV ======= -->
 <nav class="nav" id="nav">
+  <div class="scroll-progress" id="scroll-progress"></div>
   <div class="inner">
-    <a href="#top" class="brand">Mateo Orellana</a>
+    <a href="#top" class="brand"><span class="brand-mark">MO</span><span>Mateo Orellana</span></a>
     <ul class="links">
       <li><a href="#work" data-i18n="nav_work">Proyectos</a></li>
       <li><a href="#tech" data-i18n="nav_tech">Tecnologías</a></li>
@@ -49,8 +52,17 @@
   <div class="cta-row reveal">
     <a class="btn btn-primary" href="#work" data-i18n="cta_work">Ver proyectos</a>
     <a class="btn" href="#contact" data-i18n="cta_contact">Contacto</a>
-    <a class="btn" href="assets/Mateo_Orellana_CV.pdf" data-i18n="cta_resume">Descargar CV (PDF)</a>
+    <a class="btn" href="assets/Mateo_Orellana_CV.pdf" download data-i18n="cta_resume">Descargar CV (PDF)</a>
   </div>
+  <a class="hero-feature reveal" href="#showreel" aria-label="Ver showreel 2026">
+    <img src="assets/screenshots/showreel-poster.jpg" alt="Fotograma del showreel de Mateo Orellana" />
+    <span class="hero-feature-shade"></span>
+    <span class="hero-feature-copy">
+      <span class="play-icon" aria-hidden="true">▶</span>
+      <span><b>Showreel 2026</b><small>Gameplay · IA · Networking</small></span>
+    </span>
+    <span class="hero-feature-index">00:53</span>
+  </a>
   <div class="hero-scroll reveal"><span data-i18n="scroll">Scroll</span><div class="line"></div></div>
 </header>
 
@@ -81,7 +93,7 @@
 
       <!-- ============ PROYECTO 01 — EL SHOW OLVIDADO ============ -->
       <article class="project reveal" id="synco">
-        <div class="thumb">
+        <div class="thumb" data-label="Unreal Engine · C++">
           <img src="assets/screenshots/show-olvidado.jpg" alt="El Show Olvidado — gameplay" loading="lazy" />
         </div>
         <div class="body">
@@ -95,6 +107,8 @@
             <div class="q" data-i18n="challenge_q">Desafío técnico</div>
             <p data-i18n="synco_challenge">Encapsular el input de cada habilidad dentro de la ability misma (no en el pawn), de modo que las acciones viajen con el DataAsset y se desvinculen automáticamente al terminar — evitando leaks de bindings en el input component.</p>
           </div>
+          <details class="code-details">
+            <summary><span data-i18n="code_label">Ver implementación</span><span aria-hidden="true">+</span></summary>
           <code class="block"><span class="cmt">// GA_BaseTriggeredInputAction.cpp — ActivateAbility()</span>
 <span class="cmt">// Lookup which UInputAction THIS ability class is mapped to,</span>
 <span class="cmt">// then bind it live within the ability lifecycle.</span>
@@ -113,6 +127,7 @@
     ReleasedHandles.AddUnique(Released.getHandle());
 }
 <span class="cmt">// On EndAbility: every tracked handle is removed — input scoped to ability lifecycle</span></code>
+          </details>
           <div class="links">
             <a href="#">Video gameplay</a>
             <a href="#">GitHub</a>
@@ -123,7 +138,7 @@
 
       <!-- ============ PROYECTO 02 — GALACTUM ============ -->
       <article class="project reveal" id="galactum">
-        <div class="thumb">
+        <div class="thumb" data-label="Godot · Networking">
           <img src="assets/screenshots/galactum.png" alt="Galactum — mundo espacial" loading="lazy" />
         </div>
         <div class="body">
@@ -137,6 +152,8 @@
             <div class="q" data-i18n="challenge_q">Desafío técnico</div>
             <p data-i18n="galactum_challenge">Mantener un mundo compartido consistente entre cliente y servidor, resolviendo las 4 transiciones outside→inside/inside→outside, mientras el módulo se desarrollaba de forma independiente a los otros 4 equipos (con mocks como dependencias).</p>
           </div>
+          <details class="code-details">
+            <summary><span data-i18n="code_label">Ver implementación</span><span aria-hidden="true">+</span></summary>
           <code class="block"><span class="cmt"># sss_connection.gd — detect desync via monotonic seq continuity</span>
 <span class="kw">func</span> _validate_sequence(message: Dictionary) -> bool:
     <span class="kw">var</span> incoming_seq := int(message.get(<span class="str">"seq"</span>, -1))
@@ -149,6 +166,7 @@
         <span class="kw">return</span> false  <span class="cmt"># gap real → desync_detected.emit() → request_full_snapshot()</span>
     _next_expected_seq = incoming_seq + 1
     <span class="kw">return</span> true</code>
+          </details>
           <div class="links">
             <a href="#">Video gameplay</a>
             <a href="#">GitHub</a>
@@ -159,7 +177,7 @@
 
       <!-- ============ PROYECTO 03 — ROBLOX OBBY ============ -->
       <article class="project reveal" id="roblox">
-        <div class="thumb">
+        <div class="thumb" data-label="Roblox Studio · Luau">
           <img src="assets/screenshots/roblox.png" alt="Roblox Obby Show Olvidado — gameplay" loading="lazy" />
         </div>
         <div class="body">
@@ -173,6 +191,8 @@
             <div class="q" data-i18n="challenge_q">Desafío técnico</div>
             <p data-i18n="roblox_challenge">Que la progresión y la economía sobrevivan servidores y reinicios, validando cada transacción del lado del servidor y evitando exploits del cliente (XP spoofing, duplicates, etc.).</p>
           </div>
+          <details class="code-details">
+            <summary><span data-i18n="code_label">Ver implementación</span><span aria-hidden="true">+</span></summary>
           <code class="block"><span class="cmt">-- Ability: Push con física realista</span>
 <span class="kw">local</span> mass = otherRoot.AssemblyMass <span class="kw">or</span> otherRoot:GetMass()
 <span class="kw">local</span> impulse = dir * mass * strength
@@ -191,6 +211,7 @@ otherRoot:ApplyImpulse(impulse)
 <span class="kw">if</span> inv.Coins &lt; effectivePrice <span class="kw">then return</span> <span class="kw">end</span>
 inv.Coins -= effectivePrice
 inv.OwnedItems[itemId] = <span class="kw">true</span></code>
+          </details>
           <div class="links">
             <a href="#">Jugar en Roblox</a>
             <a href="#">Video gameplay</a>
@@ -201,7 +222,7 @@ inv.OwnedItems[itemId] = <span class="kw">true</span></code>
 
       <!-- ============ PROYECTO 04 — DEAD GENRE ============ -->
       <article class="project reveal" id="dead-genre">
-        <div class="thumb">
+        <div class="thumb" data-label="Godot · Combat AI">
           <img src="assets/screenshots/dead-genre.jpg" alt="Dead Genre — Pandora's Tower" loading="lazy" />
         </div>
         <div class="body">
@@ -215,6 +236,8 @@ inv.OwnedItems[itemId] = <span class="kw">true</span></code>
             <div class="q" data-i18n="challenge_q">Desafío técnico</div>
             <p data-i18n="deadgenre_challenge">Construir un ciclo de combate legible: el jugador debe leer el ataque enemigo antes de que conecte, usando telegraph visual y separación temporal entre warning y detonación del área marcada.</p>
           </div>
+          <details class="code-details">
+            <summary><span data-i18n="code_label">Ver implementación</span><span aria-hidden="true">+</span></summary>
           <code class="block"><span class="cmt"># Enemy.gd — coordinación descentralizada del grupo</span>
 <span class="cmt"># Rotación determinista "only one attacker" por time-slot.</span>
 <span class="cmt"># Sin manager node — el atacante rota entre combatientes</span>
@@ -229,6 +252,7 @@ inv.OwnedItems[itemId] = <span class="kw">true</span></code>
     <span class="kw">var</span> time_slot: int = int(Time.get_ticks_msec() / switch_ms)
     <span class="kw">var</span> attacker_index: int = time_slot % combat_enemies.size()
     <span class="kw">return</span> combat_enemies[attacker_index] == self</code>
+          </details>
           <div class="links">
             <a href="#">Video gameplay</a>
             <a href="#">GitHub</a>
@@ -238,7 +262,7 @@ inv.OwnedItems[itemId] = <span class="kw">true</span></code>
 
       <!-- ============ PROYECTO 05 — INTERDEMO GAME JAM ============ -->
       <article class="project reveal" id="gamejam">
-        <div class="thumb">
+        <div class="thumb" data-label="Godot · Game Jam 48h">
           <video muted playsinline controls preload="metadata" class="thumb-video" poster="assets/screenshots/gamejam.jpg">
             <source src="assets/videos/interdemo-trailer.mp4" type="video/mp4" />
           </video>
@@ -254,6 +278,8 @@ inv.OwnedItems[itemId] = <span class="kw">true</span></code>
             <div class="q" data-i18n="challenge_q">Desafío técnico</div>
             <p data-i18n="gamejam_challenge">Entregar una experiencia completa y jugable en 48 horas, priorizando el core loop (interrogatorio → heartbeat → resultado) y complementando con shader atmosférico.</p>
           </div>
+          <details class="code-details">
+            <summary><span data-i18n="code_label">Ver implementación</span><span aria-hidden="true">+</span></summary>
           <code class="block"><span class="cmt">// interrogatorio.gdshader — distorsión atmosférica</span>
 shader_type spatial;
 uniform float intensity : hint_range(0.0, 1.0) = 0.0;
@@ -266,6 +292,7 @@ void fragment() {
     uv += (uv - vec2(0.5)) * dist * intensity * 0.15;
     ALBEDO = texture(screen_texture, uv).rgb;
 }</code>
+          </details>
           <div class="links">
             <a href="#">Jugar (itch.io)</a>
             <a href="#">Video trailer</a>
@@ -366,7 +393,7 @@ void fragment() {
       <a href="https://github.com/Drfiter" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/mateo-daniel-orellana-villegas-586290270/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.linkedin.com/company/novalink-studio/" target="_blank" rel="noopener">NOVALINK Studio</a>
-      <a href="assets/Mateo_Orellana_CV.pdf" data-i18n="link_resume">CV (PDF)</a>
+      <a href="assets/Mateo_Orellana_CV.pdf" download data-i18n="link_resume">CV (PDF)</a>
     </div>
   </div>
 </section>
@@ -380,6 +407,6 @@ void fragment() {
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>
